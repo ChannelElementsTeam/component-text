@@ -1,0 +1,73 @@
+<dom-module id="component-text-compose">
+  <template>
+    <style>
+      .container {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .flex {
+        -ms-flex: 1 1 0.000000001px;
+        -webkit-flex: 1;
+        flex: 1;
+        -webkit-flex-basis: 0.000000001px;
+        flex-basis: 0.000000001px;
+      }
+
+      .buttonPanel {
+        padding-left: 15px;
+      }
+
+      input {
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 3px solid #e5e5e5;
+        background: transparent;
+        font-size: 16px;
+        font-weight: 300;
+        font-family: "Roboto", sans-serif;
+        padding: 10px 5px;
+        color: #000;
+      }
+
+      button {
+        display: inline-block;
+        font-family: inherit;
+        text-transform: uppercase;
+        padding: 8px 12px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 3px solid #263238;
+        background: none;
+        color: #263238;
+        font-size: 20px;
+        min-width: 60px;
+        text-align: center;
+      }
+    </style>
+    <div class="container">
+      <div class="flex" style="position: relative;">
+        <input id="txt" placeholder="your message..." on-input="onInput" on-keydown="onKeydown">
+      </div>
+      <div class="buttonPanel">
+        <button id="btnSend" on-click="onSend">Send</button>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class ComponentTextView extends Polymer.Element {
+      static get is() { return 'component-text-compose'; }
+    }
+    window.customElements.define(ComponentTextView.is, ComponentTextView);
+  </script>
+</dom-module>

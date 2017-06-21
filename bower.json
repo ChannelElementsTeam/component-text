@@ -1,0 +1,22 @@
+{
+  "name": "component-text",
+  "homepage": "https://github.com/ChannelElementsTeam/component-text",
+  "authors": [
+    "Hivepoint",
+    "Inc."
+  ],
+  "description": "A Channels compatible component that deals with plain text messages",
+  "main": "component-text.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "polymer": "^2.0.1"
+  }
+}
