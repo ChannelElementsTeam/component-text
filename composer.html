@@ -75,6 +75,11 @@
   <script>
     class ComponentTextComposer extends Polymer.Element {
       static get is() { return 'component-text-compose'; }
+      static get properties() {
+        return {
+          channel: Object
+        };
+      }
 
       connectedCallback() {
         super.connectedCallback();
@@ -102,6 +107,7 @@
       }
 
       onSend() {
+        console.log("Send to channel", channel);
         this.clear();
       }
     }
