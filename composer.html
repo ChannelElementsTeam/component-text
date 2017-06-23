@@ -102,13 +102,25 @@
       }
 
       clear() {
+        this.$.txt.disabled = false;
         this.$.txt.value = "";
         this.onInput();
       }
 
       onSend() {
-        console.log("Send to channel", channel);
-        this.clear();
+        const text = this.$.txt.value.trim();
+        this.$.btnSend.disabled = true;
+        this.$.txt.disabled = true;
+        if (text) {
+          this.channel.sendCard(this, { json: { text: text } }, true, false).then(() => {
+            this.clear();
+            this.$.txt.focus();
+          }).catch((err) => {
+            console.log(err);
+            this.clear();
+            this.$.txt.focus();
+          });
+        }
       }
     }
     window.customElements.define(ComponentTextComposer.is, ComponentTextComposer);

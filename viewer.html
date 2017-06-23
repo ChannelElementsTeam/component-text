@@ -1,10 +1,20 @@
 <dom-module id="component-text-view">
   <template>
-    <div>Meep Meep</div>
+    <div>{{data.text}}</div>
   </template>
   <script>
     class ComponentTextView extends Polymer.Element {
       static get is() { return 'component-text-view'; }
+      static get properties() {
+        return {
+          data: {
+            type: Object,
+            observer: 'refresh'
+          }
+        };
+      }
+      refresh() {
+      }
     }
     window.customElements.define(ComponentTextView.is, ComponentTextView);
   </script>
