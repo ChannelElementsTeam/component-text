@@ -7,13 +7,8 @@
       static get is() { return 'component-text-view'; }
       static get properties() {
         return {
-          data: {
-            type: Object,
-            observer: 'refresh'
-          }
+          data: Object
         };
-      }
-      refresh() {
       }
     }
     window.customElements.define(ComponentTextView.is, ComponentTextView);
